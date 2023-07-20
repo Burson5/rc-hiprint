@@ -1,0 +1,39 @@
+{
+  "name": "rc-hiprint",
+  "version": "0.0.1",
+  "description": "hiprint for react",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "keywords": [
+    "hiprint",
+    "react"
+  ],
+  "authors": [
+    "burson5@qq.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "father": "^4.2.3",
+    "@claviska/jquery-minicolors": "^2.3.6",
+    "canvg": "^3.0.10",
+    "html2canvas": "^1.4.1",
+    "jquery": "^3.6.0",
+    "jsbarcode": "^3.11.5",
+    "jspdf": "^2.5.1",
+    "nzh": "^1.0.8",
+    "socket.io-client": "^4.5.1"
+  }
+}
