@@ -1,7 +1,7 @@
 /*
  * @Author: Burson5
  * @Date: 2023-07-19 17:41:16
- * @LastEditTime: 2023-07-19 18:01:05
+ * @LastEditTime: 2023-07-20 10:50:26
  * @LastEditors: Burson5
  * @Description:
  */
@@ -19,3 +19,4 @@ import "./hiprint/css/hiprint.css";
 import "./hiprint/css/print-lock.css";
 
 export { defaultElementTypeProvider, hiprint };
+export default hiprint;
