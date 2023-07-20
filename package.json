@@ -18,6 +18,11 @@
     "burson5@qq.com"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Burson5/rc-hiprint.git",
+    "baseUrl": "https://github.com/Burson5/rc-hiprint"
+  },
   "files": [
     "dist",
     "compiled"
