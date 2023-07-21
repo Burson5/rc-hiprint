@@ -17,6 +17,17 @@ export default function (hiprint) {
             type: "image",
           },
           {
+            tid: "defaultModule.A4Image",
+            title: "图片",
+            width: 210,
+            heigh: 296.6,
+            data: "",
+            type: "image",
+            options: {
+              zIndex: -1,
+            },
+          },
+          {
             tid: "defaultModule.longText",
             title: "长文",
             data: "155123456789",
