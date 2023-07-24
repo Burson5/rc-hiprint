@@ -12,6 +12,7 @@ export default function (hiprint) {
             options: {
               fontSize: 24,
               fontWeight: 500,
+              hideTitle: true,
             },
           },
           {
@@ -22,6 +23,7 @@ export default function (hiprint) {
             options: {
               fontSize: 12,
               fontWeight: 400,
+              hideTitle: true,
             },
           },
           {
@@ -54,6 +56,10 @@ export default function (hiprint) {
             title: "长文",
             data: "155123456789",
             type: "longText",
+            options: {
+              fontSize: 12,
+              fontWeight: 400,
+            },
           },
           {
             tid: "defaultModule.table",
