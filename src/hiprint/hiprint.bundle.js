@@ -2695,7 +2695,7 @@ var hiprint = function (t) {
 
           if (t && (e = t.getOnFieldChooseClick()), e) {
             this.target.find('button').click(function () {
-              e && e(i);
+              e && e(i, t);
             })
           }
         }
@@ -2886,7 +2886,7 @@ var hiprint = function (t) {
         this.target = $(' <div class="hiprint-option-item hiprint-option-item-row">\n        <div class="hiprint-option-item-label">\n        图片地址\n        </div>\n        <div class="hiprint-option-item-field" style="display: flex;align-items: baseline;">\n        <input type="text" placeholder="请输入图片地址" class="auto-submit" style="width:70%">\n    <button class="hiprint-option-item-settingBtn" style="padding:0 10px;margin:0 0 0 5px" type="button">选择</button>        </div>\n    </div>');
         if (t && (e = t.getOnImageChooseClick()), e) {
           this.target.find('button').click(function () {
-            e && e(i);
+            e && e(i, t);
           })
         }
         return this.target;
