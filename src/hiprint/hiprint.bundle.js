@@ -2681,7 +2681,7 @@ var hiprint = function (t) {
       }
 
       return t.prototype.createTarget = function (t) {
-        var e = void 0;
+        var e = void 0, i = this;
 
         if (t && (e = t.getFields()), e) {
           this.isSelect = !0;
