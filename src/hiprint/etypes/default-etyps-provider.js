@@ -5,10 +5,24 @@ export default function (hiprint) {
       context.addPrintElementTypes("defaultModule", [
         new hiprint.PrintElementTypeGroup("常规", [
           {
+            tid: "defaultModule.title",
+            title: "标题",
+            data: "",
+            type: "text",
+            options: {
+              fontSize: 24,
+              fontWeight: 500,
+            },
+          },
+          {
             tid: "defaultModule.text",
             title: "文本",
             data: "",
             type: "text",
+            options: {
+              fontSize: 12,
+              fontWeight: 400,
+            },
           },
           {
             tid: "defaultModule.image",
@@ -18,13 +32,21 @@ export default function (hiprint) {
           },
           {
             tid: "defaultModule.A4Image",
-            title: "图片",
+            title: "A4图片",
             width: 210,
             heigh: 296.6,
             data: "",
             type: "image",
             options: {
               zIndex: -1,
+              styler: function (value, options, target, templateData) {
+                options.setHeight(
+                  ($(".hiprint-printPaper").height() * 0.75).toFixed(2)
+                );
+                options.setWidth(
+                  ($(".hiprint-printPaper").width() * 0.75).toFixed(2)
+                );
+              },
             },
           },
           {
