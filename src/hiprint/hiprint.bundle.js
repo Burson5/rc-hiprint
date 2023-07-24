@@ -1076,8 +1076,8 @@ var hiprint = function (t) {
           var n;
           if (e.tabs && e.tabs.length) {
             n = [];
-            e.tabs.forEach(function (n) {
-              n = n.concat(n.options)
+            e.tabs.forEach(function (tab) {
+              n = n.concat(tab.options)
             });
           } else {
             n = e.supportOptions;
