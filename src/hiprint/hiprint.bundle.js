@@ -2705,6 +2705,8 @@ var hiprint = function (t) {
         return (this.isSelect ? this.target.find("select").val() : this.target.find("input").val()) || void 0;
       }, t.prototype.setValue = function (t) {
         this.isSelect ? t && (this.target.find('option[value="' + t + '"]').length || this.target.find("select").prepend('<option value="' + t + '" >' + t + "</option>"), this.target.find("select").val(t)) : this.target.find("input").val(t);
+      }, t.prototype.refresh = function (t) {
+        this.setValue(t), this.target.find("input").change();   
       }, t.prototype.destroy = function () {
         this.target.remove();
       }, t;
@@ -2737,6 +2739,8 @@ var hiprint = function (t) {
         if (t) return t.toString();
       }, t.prototype.setValue = function (t) {
         this.target.find("input").val(t);
+      }, t.prototype.refresh = function (t) {
+        this.setValue(t), this.target.find("input").change();    
       }, t.prototype.destroy = function () {
         this.target.remove();
       }, t;
