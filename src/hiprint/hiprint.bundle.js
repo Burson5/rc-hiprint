@@ -1223,6 +1223,9 @@ var hiprint = function (t) {
       }, BasePrintElement.prototype.getOnImageChooseClick = function () {
         var t = this.options.onImageChooseClick;
         return t || (t = _HiPrintlib__WEBPACK_IMPORTED_MODULE_6__.a.instance.getPrintTemplateById(this.templateId).getOnImageChooseClick());
+      }, BasePrintElement.prototype.getOnFieldChooseClick = function () {
+        var t = this.options.onFieldChooseClick;
+        return t || (t = _HiPrintlib__WEBPACK_IMPORTED_MODULE_6__.a.instance.getPrintTemplateById(this.templateId).getOnFieldChooseClick());
       }, BasePrintElement.prototype.bingCopyEvent = function (t) {
         var n = this;
         t.keydown(function (r) {
@@ -2688,7 +2691,13 @@ var hiprint = function (t) {
           }), n += " </select>\n            </div>\n        </div>", this.target = $(n);
         } else {
           this.isSelect = !1;
-          this.target = $(' <div class="hiprint-option-item hiprint-option-item-row">\n            <div class="hiprint-option-item-label">\n            字段名\n            </div>\n            <div class="hiprint-option-item-field">\n            <input type="text" placeholder="请输入字段名" class="auto-submit">\n            </div>\n        </div>');
+          this.target = $(' <div class="hiprint-option-item hiprint-option-item-row">\n <div class="hiprint-option-item-label">\n 字段名\n </div>\n <div class="hiprint-option-item-field" style="display: flex;align-items: baseline;">\n <input type="text" placeholder="请输入字段名" class="auto-submit" style="width:70%">\n <button class="hiprint-option-item-settingBtn" style="padding:0 10px;margin:0 0 0 5px" type="button">选择</button> </div>\n</div>');
+
+          if (t && (e = t.getOnFieldChooseClick()), e) {
+            this.target.find('button').click(function () {
+              e && e(i);
+            })
+          }
         }
 
         return this.target;
@@ -9419,6 +9428,7 @@ var hiprint = function (t) {
         n.template && i.panels.forEach(function (t) {
           e.printPanels.push(new pt(t, e.id));
         }), n.fontList && (this.fontList = n.fontList), n.fields && (this.fields = n.fields), n.onImageChooseClick && (this.onImageChooseClick = n.onImageChooseClick),
+          n.onFieldChooseClick && (this.onFieldChooseClick = n.onFieldChooseClick),
           n.onPanelAddClick && (this.onPanelAddClick = n.onPanelAddClick),
         n.settingContainer && new ut(this, n.settingContainer), n.paginationContainer && (this.printPaginationCreator = new dt(n.paginationContainer, this), this.printPaginationCreator.buildPagination()), this.initAutoSave();
       }
@@ -9727,6 +9737,10 @@ var hiprint = function (t) {
         this.onImageChooseClick = t;
       }, t.prototype.getOnImageChooseClick = function () {
         return this.onImageChooseClick;
+      },t.prototype.setOnFieldChooseClick = function (t) {
+        this.onFieldChooseClick = t;
+      }, t.prototype.getOnFieldChooseClick = function () {
+        return this.onFieldChooseClick;
       }, t.prototype.getFieldsInPanel = function () {
         var t = [];
         return this.printPanels.forEach(function (e) {

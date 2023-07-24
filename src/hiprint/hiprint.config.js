@@ -427,7 +427,7 @@
       ],
       default: {
         width: 120,
-        height: 9.75,
+        height: 12,
       }
     },
     image: {
