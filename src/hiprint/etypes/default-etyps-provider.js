@@ -41,13 +41,13 @@ export default function (hiprint) {
             type: "image",
             options: {
               zIndex: -1,
-              styler: function (value, options, target, templateData) {
-                options.setHeight(
-                  ($(".hiprint-printPaper").height() * 0.75).toFixed(2)
-                );
-                options.setWidth(
-                  ($(".hiprint-printPaper").width() * 0.75).toFixed(2)
-                );
+              styler: function styler(value, options, target, templateData) {
+                return {
+                  width: Number($(".hiprint-printPaper").width()),
+                  height: Number($(".hiprint-printPaper").height()),
+                  left: 0,
+                  top: 0,
+                };
               },
             },
           },
