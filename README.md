@@ -2,6 +2,12 @@
 
 一个基于 React 的 hiprint 打印组件库，提供强大的可视化打印设计和打印功能。
 
+[![NPM Version](https://img.shields.io/npm/v/rc-hiprint.svg)](https://www.npmjs.com/package/rc-hiprint)
+[![NPM Downloads](https://img.shields.io/npm/dm/rc-hiprint.svg)](https://www.npmjs.com/package/rc-hiprint)
+[![GitHub Actions](https://github.com/Burson5/rc-hiprint/workflows/CI/badge.svg)](https://github.com/Burson5/rc-hiprint/actions)
+[![GitHub Actions](https://github.com/Burson5/rc-hiprint/workflows/Publish%20to%20NPM/badge.svg)](https://github.com/Burson5/rc-hiprint/actions)
+[![License](https://img.shields.io/npm/l/rc-hiprint.svg)](https://github.com/Burson5/rc-hiprint/blob/main/LICENSE)
+
 ## 📦 安装
 
 ```bash
@@ -310,6 +316,75 @@ rc-hiprint/
 3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 打开 Pull Request
+
+## 🔧 开发
+
+### 本地开发
+
+```bash
+# 克隆项目
+git clone https://github.com/Burson5/rc-hiprint.git
+cd rc-hiprint
+
+# 安装依赖
+pnpm install
+
+# 启动开发模式
+pnpm dev
+
+# 构建项目
+pnpm build
+
+# 类型检查
+pnpm typecheck
+```
+
+### 发布流程
+
+本项目使用 GitHub Actions 自动化发布流程：
+
+#### 自动发布（推荐）
+
+1. **更新版本并发布**
+   ```bash
+   # 补丁版本 (1.0.0 → 1.0.1)
+   pnpm release:patch
+   
+   # 次要版本 (1.0.0 → 1.1.0)
+   pnpm release:minor
+   
+   # 主要版本 (1.0.0 → 2.0.0)
+   pnpm release:major
+   
+   # 预发布版本 (1.0.0 → 1.0.1-0)
+   pnpm release:prerelease
+   ```
+
+2. **仅更新版本号**
+   ```bash
+   pnpm version:patch  # 或 version:minor, version:major
+   git push origin --tags
+   ```
+
+#### 手动发布
+
+1. 进入 [GitHub Actions](https://github.com/Burson5/rc-hiprint/actions)
+2. 选择 "Publish to NPM" 工作流
+3. 点击 "Run workflow" 手动触发发布
+
+#### 发布要求
+
+- 需要配置 `NPM_TOKEN` secret（仓库管理员已配置）
+- 推送的标签格式为 `v*`（如 `v1.0.0`）
+- 确保所有测试通过
+- 确保构建成功
+
+### CI/CD 流程
+
+- **持续集成**：每次推送和 PR 都会触发 CI 检查
+- **自动发布**：推送版本标签时自动发布到 NPM
+- **多版本测试**：在 Node.js 16, 18, 20 上测试
+- **构建验证**：确保包可以正确构建和打包
 
 ## 📄 许可证
 
