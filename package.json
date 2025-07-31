@@ -31,7 +31,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "father": "^4.2.3"
+    "father": "^4.2.3",
+    "standard-version": "^9.5.0"
   },
   "dependencies": {
     "@claviska/jquery-minicolors": "^2.3.6",
