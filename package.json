@@ -8,7 +8,10 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "postrelease": "git push --follow-tags origin main",
+    "release": "standard-version && npm run postrelease",
+    "alpha": "standard-version --release-as patch --prerelease alpha && npm run postrelease"
   },
   "keywords": [
     "hiprint",
